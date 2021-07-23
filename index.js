@@ -57,7 +57,23 @@ function getTotalCount(animals) {
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
+function getAllKinds(animals) {
+  //declare an empty array variable, to be used for storing list of animals.
+  let animalsList = []
+
+  //create conditional to return an empty array if inputted array is empty
+  if(animals.length === 0){
+    return animals
+  }else{
+    //create a for loop to iterate through animals array
+    for(let i = 0; i < animals.length; i++){
+      //push the values from the "kind" keys from the animals array, into animalsList array.
+      animalsList.push(animals[i].kind)
+    }
+    //return the list of animals, an array of strings
+    return animalsList
+  }
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -76,7 +92,27 @@ function getAllKinds(animals) {}
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+  //initalize empty array, to store numbers that are greater than or equal to minimum.
+  let filteredNums = []
+
+  //return empty array if inputted array is empty
+  if(animals.length === 0){
+    return animals
+  }else{
+    //create a for loop to iterate through the animals array
+    for(let i = 0; i < animals.length; i++){
+      //check whether count value at index position is greater than or equal to minimum.
+      if(animals[i].count >= minimum){
+        //push objects from animals array which meet criteria,to the filteredNums array.
+        filteredNums.push(animals[i])
+      } 
+    }
+    return filteredNums
+  }
+}
+
+//  REMEMBER, YOU'RE RETURNING AN OBJECT.
 
 /**
  * FUNCTION DESCRIPTION
